@@ -1,0 +1,8 @@
+<div class="w-5/6 mx-auto flex justify-between">
+  <div class="w-[40%]">
+    <app-additem (onAddedNewNote)="onAddNote($event)" />
+  </div>
+  <div class="w-[60%]">
+    <app-items [AllNoteItems]="AllDate" />
+  </div>
+</div>

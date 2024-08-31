@@ -1,0 +1,44 @@
+<div class="w-full relative">
+  <div class="fixed mt-5">
+    <p class="text-4xl font-bold">Add New Note</p>
+    <form class="mt-9 flex flex-col gap-6" (ngSubmit)="onSubmit()">
+      <input
+        type="text"
+        placeholder="Note title"
+        class="outline-none ring-1 p-2 rounded-sm"
+        [(ngModel)]="title"
+        name="title"
+        required=""
+      />
+      <textarea
+        name="notebody"
+        id="notebody"
+        cols="55"
+        rows="10"
+        placeholder="Write your note"
+        class="outline-none ring-1 p-2 rounded-sm"
+        [(ngModel)]="body"
+        name="body"
+        required="TRUE"
+      ></textarea>
+      <p class="flex items-center gap-2">
+        <span>Have a plane?</span><span>{{ havePlane ? "TRUE" : "FALSE" }}</span
+        ><input
+          type="checkbox"
+          name="plane"
+          id="plane"
+          class="size-5"
+          [(ngModel)]="havePlane"
+          name="status"
+        />
+      </p>
+
+      <button
+        type="submit"
+        class="bg-green-500 text-white py-3 rounded-md mt-5"
+      >
+        Add New Note
+      </button>
+    </form>
+  </div>
+</div>

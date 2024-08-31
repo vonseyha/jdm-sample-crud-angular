@@ -1,0 +1,43 @@
+<div class="w-1/2 mt-10 mx-auto">
+  <p class="text-center text-lg">Update Your Note</p>
+  <form class="mt-5 flex flex-col gap-5" (ngSubmit)="hadleSubmit()">
+    <div>
+      <label for="title">Note Title</label>
+      <br />
+      <input
+        type="text"
+        value="{{ data?.title }}"
+        name="title"
+        class="ring-1 p-2 w-full outline-none rounded-sm"
+        [(ngModel)]="dataUpdate.title"
+      />
+    </div>
+    <div>
+      <label for="body">Write Your Note</label><br />
+      <textarea
+        name="body"
+        rows="10"
+        id="body"
+        class="ring-1 p-2 w-full outline-none rounded-sm"
+        [value]="data?.body"
+        [(ngModel)]="dataUpdate.body"
+      ></textarea>
+    </div>
+    <div>
+      <p class="flex gap-1 items-center">
+        Have plane? <span>{{ data?.status === true ? "ON" : "OFF" }}</span>
+        <span
+          ><input
+            type="checkbox"
+            class="size-4"
+            [checked]="data?.status === true"
+            [(ngModel)]="dataUpdate.status"
+            name="status"
+        /></span>
+      </p>
+    </div>
+    <button type="submit" class="py-2 bg-green-500 text-white rounded-sm mt-5">
+      Submit
+    </button>
+  </form>
+</div>

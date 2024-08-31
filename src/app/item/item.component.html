@@ -1,0 +1,38 @@
+<div
+  [ngClass]="{ status: data?.status }"
+  class="bg-gray-300 px-2 py-4 rounded-sm flex flex-col gap-5"
+>
+  <p>
+    <span class="font-bold"> Note Title : </span>
+    <span class="pl-2">{{ data?.title }}</span>
+  </p>
+  <p>
+    <span class="font-bold">Note Body : </span
+    ><span class="pl-2">{{ data?.body }}</span>
+  </p>
+  <p>
+    <span class="font-bold">Note Date : </span
+    ><span class="pl-2">{{ data?.date }}</span>
+  </p>
+  <p class="flex items-center">
+    <span class="font-bold">Have Plane : </span
+    ><span class="pl-2">{{ data?.status }}</span>
+  </p>
+  <div class="flex gap-10 justify-center items-center">
+    <a [routerLink]="['/detail', data?.id]">
+      <button
+        type="button"
+        class="bg-green-600 px-10 py-2 text-white rounded-md"
+      >
+        Update
+      </button>
+    </a>
+    <button
+      type="button"
+      class="bg-red-600 px-10 py-2 text-white rounded-md"
+      (click)="hadleOnDelete(data!)"
+    >
+      Delete
+    </button>
+  </div>
+</div>
